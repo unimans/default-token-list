@@ -17,7 +17,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Uniswap/default-token-list.git"
+    "url": "git+https://github.com/unimans/default-token-list.git"
   },
   "keywords": [
     "uniswap",
@@ -27,14 +27,9 @@
   ],
   "author": "Moody Salem",
   "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/Uniswap/default-token-list/issues"
-  },
-  "homepage": "https://github.com/Uniswap/default-token-list#readme",
   "devDependencies": {
     "@ethersproject/address": "^5.0.2",
-    "@uniswap/token-list-bridge-utils": "^2.3.0",
-    "@uniswap/token-lists": "^1.0.0-beta.29",
+    "@uniswap/token-lists": "https://github.com/unimans/default-token-list.git",
     "ajv": "^6.12.3",
     "chai": "^4.2.0",
     "mocha": "^8.0.1",

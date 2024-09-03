@@ -3,11 +3,9 @@ const mainnet = require("./tokens/mainnet.json");
 const local = require("./tokens/local.json");
 const uniman = require("./tokens/uniman.json");
 
-const bridgeUtils = require("@uniswap/token-list-bridge-utils");
-
 module.exports = function buildList() {
   const parsed = version.split(".");
-  const l1List = {
+  return {
     name: "Uniswap Labs Default",
     timestamp: new Date().toISOString(),
     version: {
@@ -18,11 +16,7 @@ module.exports = function buildList() {
     tags: {},
     logoURI: "ipfs://QmNa8mQkrNKp1WEEeGjFezDmDeodkWRevGFN8JCV7b4Xir",
     keywords: ["uniswap", "default"],
-    tokens: [
-      ...mainnet,
-      ...local,
-      ...uniman,
-    ]
+    tokens: [...mainnet,...local,...uniman]
       // sort them by symbol for easy readability
       .sort((t1, t2) => {
         if (t1.chainId === t2.chainId) {
@@ -31,5 +25,4 @@ module.exports = function buildList() {
         return t1.chainId < t2.chainId ? -1 : 1;
       }),
   };
-  return bridgeUtils.chainify(l1List);
 };
